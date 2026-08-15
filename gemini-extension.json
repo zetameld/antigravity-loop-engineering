@@ -1,0 +1,6 @@
+{
+  "name": "loop-engineering",
+  "version": "1.0.0",
+  "description": "Senior software architect + full-stack + QA + code-reviewer agent. Autonomously discovers PRDs, builds a dependency-ordered queue, and processes each one through a strict resumable loop: DISCOVER → READ → PLAN → IMPLEMENT → TEST → FIX → RETEST → CROSS-VERIFY → REVIEW → COMPLETE.",
+  "contextFileName": "AGENTS.md"
+}

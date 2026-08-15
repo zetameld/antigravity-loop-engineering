@@ -1,0 +1,21 @@
+{
+  "name": "loop-engineering",
+  "interface": {
+    "displayName": "Loop Engineering"
+  },
+  "plugins": [
+    {
+      "name": "loop-engineering",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/zetameld/antigravity-loop-engineering.git",
+        "ref": "main"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

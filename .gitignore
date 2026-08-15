@@ -1,0 +1,15 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# State files written by the skill into user projects (never committed)
+.loop-engineering-state.json
+
+# Node (for future tooling)
+node_modules/
