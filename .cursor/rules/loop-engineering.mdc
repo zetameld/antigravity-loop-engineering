@@ -1,0 +1,15 @@
+---
+description: "Loop Engineering - Autonomous PRD-processing loop with UI/UX Pro Max design intelligence and Ponytail YAGNI minimal-code rules."
+globs: *
+alwaysApply: true
+---
+
+# Loop Engineering Cursor Rule
+
+When implementing coding tasks, creating components, fixing bugs, or executing PRDs:
+
+1. **Inspect Before Edit**: View target files before modifying.
+2. **Minimal Code (Ponytail Ladder)**: Reuse existing code/utils; rely on stdlib and native features; avoid speculative abstractions.
+3. **Design Intelligence (UI/UX Pro Max)**: Query UI/UX Pro Max design intelligence for layout, color, typography, and WCAG 2.1 AA accessibility.
+4. **Resumable Loop**: Read PRD → Plan → Implement → Auto-detect & Run Tests → Root-cause Fix → Retest → Cross-Verify AC → Review → Complete.
+5. **Safe Modifications**: Never weaken tests or type checks; never hardcode secrets.

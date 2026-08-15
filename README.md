@@ -1,259 +1,195 @@
-<h1 align="center">Loop Engineering</h1>
+<div align="center">
 
-<p align="center">
-  <em>Senior architect + full-stack + QA + code reviewer, in one autonomous agent.</em>
-</p>
+  <h1>🔄 Loop Engineering</h1>
 
-<p align="center">
-  <img src="https://img.shields.io/github/v/release/zetameld/antigravity-loop-engineering?style=flat-square&color=111111&label=release" alt="Release">
-  <img src="https://img.shields.io/badge/works%20with-Antigravity%20%7C%20Gemini%20CLI%20%7C%20Claude%20Code%20%7C%2015+%20agents-111111?style=flat-square" alt="Works with 15+ agents">
-  <img src="https://img.shields.io/badge/license-MIT-111111?style=flat-square" alt="MIT license">
-</p>
+  <p><strong>Senior Software Architect &bull; Full-Stack Engineer &bull; QA Engineer &bull; Code Reviewer Agent</strong></p>
+
+  <p>
+    <a href="https://github.com/zetameld/antigravity-loop-engineering/releases"><img src="https://img.shields.io/github/v/release/zetameld/antigravity-loop-engineering?style=flat-square&color=6366f1&label=release" alt="Release"></a>
+    <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-22c55e?style=flat-square" alt="MIT License"></a>
+    <a href="https://github.com/zetameld/antigravity-loop-engineering"><img src="https://img.shields.io/badge/works%20with-20%2B%20AI%20Agents-3b82f6?style=flat-square" alt="Works with 20+ Agents"></a>
+    <a href="docs/architecture.md"><img src="https://img.shields.io/badge/architecture-resumable%20loop-a855f7?style=flat-square" alt="Resumable Loop Architecture"></a>
+  </p>
+
+  <p>
+    <em>Autonomous PRD discovery &bull; Dependency queueing &bull; UI/UX Pro Max design intelligence &bull; Ponytail YAGNI minimal code &bull; Resumable execution loop</em>
+  </p>
+
+  ---
+</div>
+
+## 💡 What is Loop Engineering?
+
+**Loop Engineering** transforms your AI agent into an autonomous, methodically disciplined senior software engineer. 
+
+Instead of writing one-off code snippets or losing track during large features, Loop Engineering scans your workspace, discovers all requirements/PRD documents, builds a dependency-ordered execution queue, and executes each requirement through a **strict, non-shortcut 10-step resumable loop**:
+
+$$\text{DISCOVER} \longrightarrow \text{READ} \longrightarrow \text{PLAN} \longrightarrow \text{IMPLEMENT} \longrightarrow \text{TEST} \longrightarrow \text{FIX} \longrightarrow \text{RETEST} \longrightarrow \text{VERIFY} \longrightarrow \text{REVIEW} \longrightarrow \text{COMPLETE}$$
+
+It natively integrates two industry-leading agent philosophies:
+- 🎨 **[UI/UX Pro Max](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill)** for searchable design intelligence, WCAG 2.1 AA accessibility, and curated styling tokens.
+- ✂️ **[Ponytail](https://github.com/DietrichGebert/ponytail)** for YAGNI minimal-code evaluation, stdlib reuse, and simple diffs.
 
 ---
 
-You drop PRDs into your repo. Loop Engineering finds them, builds a
-dependency-ordered queue, and processes each one end-to-end — inspect,
-plan, implement, test, fix, verify, review — without stopping to ask
-unnecessary questions.
+## 📊 Architecture & Loop Flowchart
 
-It integrates **[UI/UX Pro Max](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill)**
-as its mandatory design-intelligence source and
-**[Ponytail](https://github.com/DietrichGebert/ponytail)** as its mandatory
-YAGNI/minimal-code philosophy.
+```mermaid
+flowchart TD
+    %% Phase 0: Inspection
+    subgraph P0 ["Phase 0: Autonomous Inspection"]
+        A[Detect Stack & Framework] --> B[Identify Package Manager & Lockfiles]
+        B --> C[Catalog Source Dirs & Test Runners]
+        C --> D[Map Reusable Utils, API & Design System Tokens]
+    end
 
-## The Loop
+    %% Phase 1: Discovery
+    subgraph P1 ["Phase 1: PRD Discovery & Queueing"]
+        E[Scan PRD / Specs Directory] --> F[Parse YAML Front-Matter Metadata]
+        F --> G[Topological Dependency Sort]
+        G --> H[Initialize Queue in .loop-engineering-state.json]
+    end
 
+    %% Phase 2: Processing Loop
+    subgraph P2 ["Phase 2: Strict Processing Loop (One PRD at a Time)"]
+        I[2.1 READ PRD & AC] --> J[2.2 PLAN INTERNALLY via Ponytail Ladder]
+        J --> K[2.3 IMPLEMENT via Safe Diffs & Reuse]
+        K --> L[2.4 TEST IMMEDIATELY via Auto-Detected Runners]
+        L -->|Fail| M[2.5 INVESTIGATE Root Cause]
+        M --> N[2.6 FIX & RETEST]
+        N -->|Pass| O[2.7 CROSS-VERIFY AC, A11y & Security]
+        N -->|3 Failures| Z[Flag PRD as BLOCKED & Emit Report]
+        L -->|Pass| O
+        O --> P[2.8 REVIEW & Clean Code]
+        P --> Q[2.9 COMPLETE & Advance Queue]
+    end
+
+    P0 --> P1
+    P1 --> P2
+    Q -->|Next PRD| P2
 ```
-Phase 0  INSPECT      detect stack, PM, src, tests, DB/API, auth, design system
-Phase 1  DISCOVER     find all PRD/spec files, topological sort by dependencies
-Phase 2  For each PRD (one at a time):
-           READ        goals, flows, acceptance criteria, screens, entities,
-                       DB/API, rules, permissions, validations, errors,
-                       loading, security, a11y, responsiveness, testing, NFRs
-           PLAN        smallest correct architecture (Ponytail Ladder)
-           IMPLEMENT   inspect before edit; reuse first; no secrets hardcoded
-           TEST        auto-detect unit/type/lint/build/e2e commands from repo
-           FIX         root-cause only; never weaken tests
-           RETEST      confirm green
-           CROSS-VERIFY acceptance criteria, security, a11y, responsive, perf
-           REVIEW      strip dead code, duplication, speculative abstractions
-           COMPLETE    emit summary; advance to next PRD
-```
 
-Persists a lightweight `.loop-engineering-state.json` so restarts resume
-from where they left off (always re-inspecting the live repo first).
+---
 
-## Install
+## 🚀 Quick Start & Installation
 
-### Antigravity CLI (`agy`)
+Choose your preferred AI agent environment:
+
+<details open>
+<summary><strong>🌌 Antigravity CLI (agy) / Gemini CLI</strong></summary>
 
 ```bash
+# Recommended: Install via Antigravity plugin manager
 agy plugin install https://github.com/zetameld/antigravity-loop-engineering
-```
 
-Or the longer form that also works while Antigravity is still called Gemini CLI:
-
-```bash
+# Or legacy Gemini CLI command:
 gemini extensions install https://github.com/zetameld/antigravity-loop-engineering
 ```
+</details>
 
-Skills become available as `/loop-engineering` and `/loop-engineering-review`
-in the chat.
+<details>
+<summary><strong>⚡ Claude Code</strong></summary>
 
-**Global skill only (no plugin):**
-```bash
-# Copy the SKILL.md into your global Antigravity skills directory
-mkdir -p ~/.gemini/config/skills/loop-engineering
-curl -fsSL https://raw.githubusercontent.com/zetameld/antigravity-loop-engineering/main/skills/loop-engineering/SKILL.md \
-  -o ~/.gemini/config/skills/loop-engineering/SKILL.md
-```
-
-### Claude Code
-
-```
+Run as two separate prompt commands in Claude Code:
+```text
 /plugin marketplace add zetameld/antigravity-loop-engineering
 ```
-```
+```text
 /plugin install loop-engineering@loop-engineering
 ```
-(Send as two separate prompts.)
+</details>
 
-### Codex
+<details>
+<summary><strong>💻 Codex CLI</strong></summary>
 
 ```bash
 codex plugin marketplace add zetameld/antigravity-loop-engineering
 codex plugin add loop-engineering@loop-engineering
 ```
+</details>
 
-### Qoder
+<details>
+<summary><strong>🎯 Cursor / Windsurf / Cline / Copilot Chat / Kiro / Qoder</strong></summary>
 
-Qoder auto-loads `AGENTS.md` from the repo root. Run from a checkout, or
-copy `AGENTS.md` into your project root — zero additional setup.
-
-For full plugin support, add to your `.qoder/settings.json`:
-```json
-{
-  "hooks": {
-    "UserPromptSubmit": "LOOP_ENGINEERING_DIR/hooks/qoder-hooks.json"
-  }
-}
-```
-
-### OpenCode
-
-Add to `opencode.json`:
-```json
-{ "plugin": ["https://github.com/zetameld/antigravity-loop-engineering"] }
-```
-
-### Cursor / Windsurf / Cline / Copilot Chat / Kiro / Zed
-
-These tools auto-load `AGENTS.md`. Copy it to your project root:
-
+Copy `AGENTS.md` directly into your workspace root or rules folder:
 ```bash
-curl -fsSL https://raw.githubusercontent.com/zetameld/antigravity-loop-engineering/main/AGENTS.md \
-  >> .agents/AGENTS.md
-# or directly to project root:
-curl -fsSL https://raw.githubusercontent.com/zetameld/antigravity-loop-engineering/main/AGENTS.md \
-  -o AGENTS.md
+curl -fsSL https://raw.githubusercontent.com/zetameld/antigravity-loop-engineering/main/AGENTS.md -o AGENTS.md
 ```
+</details>
 
-For **Kiro** global steering:
-```bash
-mkdir -p ~/.kiro/steering
-curl -fsSL https://raw.githubusercontent.com/zetameld/antigravity-loop-engineering/main/AGENTS.md \
-  -o ~/.kiro/steering/loop-engineering.md
-```
+<details>
+<summary><strong>🤖 OpenCode / Devin / Grok / Swival</strong></summary>
 
-For **Copilot Chat** global instructions:
-```bash
-cat >> ~/.copilot/copilot-instructions.md \
-  < <(curl -fsSL https://raw.githubusercontent.com/zetameld/antigravity-loop-engineering/main/AGENTS.md)
-```
+- **OpenCode**: Add `"plugin": ["https://github.com/zetameld/antigravity-loop-engineering"]` to `opencode.json`.
+- **Devin**: Run `devin plugins install zetameld/antigravity-loop-engineering`.
+- **Grok Build**: Run `grok plugin install zetameld/antigravity-loop-engineering --trust`.
+</details>
 
-### GitHub Copilot CLI
-
-```bash
-copilot plugin marketplace add zetameld/antigravity-loop-engineering
-copilot plugin install loop-engineering@loop-engineering
-```
-
-### Devin
-
-```bash
-devin plugins install zetameld/antigravity-loop-engineering
-```
-
-### Grok Build
-
-```bash
-grok plugin install zetameld/antigravity-loop-engineering --trust
-```
-
-Enable in config:
-```toml
-[plugins]
-enabled = ["loop-engineering"]
-```
-
-### CodeWhale / Swival / Aider / any AGENTS.md-aware tool
-
-```bash
-# Works from a clone or by copying AGENTS.md to your project root
-git clone https://github.com/zetameld/antigravity-loop-engineering
-# then run your agent from the cloned dir, or copy AGENTS.md to your project
-```
-
-### Manual (any agent, guaranteed to work)
-
-```bash
-# Clone
-git clone https://github.com/zetameld/antigravity-loop-engineering ~/.local/share/loop-engineering
-
-# Copy SKILL.md to your global Antigravity skills folder
-mkdir -p ~/.gemini/config/skills/loop-engineering
-cp ~/.local/share/loop-engineering/skills/loop-engineering/SKILL.md \
-   ~/.gemini/config/skills/loop-engineering/SKILL.md
-
-# Copy AGENTS.md to your project (instruction-only fallback for all agents)
-cp ~/.local/share/loop-engineering/AGENTS.md ./AGENTS.md
-```
-
-## PRD Format
-
-Create a file anywhere the skill looks (`prd/`, `docs/prd/`, `specs/`,
-`requirements/`, `features/`, etc.) with this shape:
-
-```markdown
----
-type: prd
-id: FEAT-001
-title: My Feature
-depends_on: []   # list other PRD IDs this one needs first
 ---
 
-# PRD: My Feature
+## 🛠️ Stack Detection & Test Runner Matrix
 
-## Goals
-...
+Loop Engineering automatically detects your project stack and runs the appropriate test, lint, and type-checking suites:
 
-## User Flows
-...
+| Framework / Stack | Config Files Detected | Test Runner Command | Type / Lint Command |
+|-------------------|-----------------------|---------------------|---------------------|
+| **Next.js / React** | `next.config.js`, `package.json` | `npx vitest run` / `npx jest` | `npx tsc --noEmit && npx eslint .` |
+| **Vue / Nuxt** | `nuxt.config.ts`, `package.json` | `npx vitest run` | `vue-tsc --noEmit` |
+| **Angular** | `angular.json` | `ng test --watch=false` | `npx tsc --noEmit` |
+| **Python / FastAPI** | `pyproject.toml`, `pytest.ini` | `pytest` / `python -m pytest` | `mypy . && ruff check .` |
+| **Laravel / PHP** | `composer.json`, `phpunit.xml` | `./vendor/bin/phpunit` | `./vendor/bin/pint` |
+| **Flutter / Dart** | `pubspec.yaml` | `flutter test` | `dart analyze` |
+| **Rust** | `Cargo.toml` | `cargo test` | `cargo clippy` |
+| **Go** | `go.mod` | `go test ./...` | `golangci-lint run` |
 
-## Acceptance Criteria
-- [ ] Testable condition 1
-- [ ] Testable condition 2
+---
 
-## Out of Scope
-...
+## 📜 The Ponytail Minimal-Code Ladder
+
+Before adding new lines of code, Loop Engineering climbs the Ponytail Ladder to enforce minimal diffs and avoid over-engineering:
+
+```
+Rung 1: Does this feature need to exist? (YAGNI) ──────> Skip if speculative
+Rung 2: Already in codebase? ───────────────────────────> Reuse existing component/util
+Rung 3: Stdlib covers it? ──────────────────────────────> Use standard library
+Rung 4: Native platform feature? ───────────────────────> Use native HTML/CSS/DB constraints
+Rung 5: Installed dependency solves it? ────────────────> Use existing npm/pip/cargo package
+Rung 6: Can it be one line? ────────────────────────────> Write concise diff
+Rung 7: Only then ──────────────────────────────────────> Write custom implementation
 ```
 
-See [`examples/example-prd.md`](examples/example-prd.md) for a complete example.
+---
 
-## Skills Included
+## 📑 Included Skills
 
-| Skill | Trigger | What it does |
-|-------|---------|--------------|
-| `loop-engineering` | Any meaningful coding task | Full PRD loop |
-| `loop-engineering-review` | `/loop-engineering-review [path]` | Structured code review: correctness, dead code, duplication, unsafe shortcuts, test gaps, a11y, security |
+| Skill | Activation Trigger | Primary Function |
+|-------|--------------------|------------------|
+| **`loop-engineering`** | Automatic on coding/PRD tasks | Full 10-step resumable PRD loop execution |
+| **`loop-engineering-review`** | Manual `/loop-engineering-review` | Architectural code review for safety, dead code, and YAGNI |
 
-## Philosophy
+---
 
-Loop Engineering enforces two philosophies and refuses to deviate:
+## 📚 Documentation Index
 
-**[Ponytail](https://github.com/DietrichGebert/ponytail) — YAGNI/minimal-code:**
-Climbs the 7-rung ladder before writing any code. Marks deliberate
-simplifications with `// loop: <desc>, <ceiling>, <upgrade path>`. Never
-cuts validation, error handling, security, or accessibility.
+- 📐 **[Architecture Overview](docs/architecture.md)** — Detailed engine lifecycle and state management.
+- 📋 **[PRD Specification Guide](docs/prd-spec-guide.md)** — How to structure PRD files and dependency graph queues.
+- 🧩 **[Integrations Guide](docs/integrations.md)** — Deep dive into UI/UX Pro Max and Ponytail rule resolution.
+- 🛡️ **[Rules & Safety Protocol](docs/rules-and-safety.md)** — Enforced safe-modification rules and error escalation.
 
-**[UI/UX Pro Max](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) — design intelligence:**
-Queries the local search tool for every visual decision. WCAG 2.1 AA is the
-minimum floor, not a stretch goal.
+---
 
-## Safe-Modification Rules
+## 🔒 Safe-Modification Rules
 
-Always enforced, no exceptions:
+1. 👁️ **Inspect First**: Always view existing files (`view_file`) before writing edits.
+2. 🔬 **Minimal Diffs**: Change only what is strictly required by acceptance criteria.
+3. 🧪 **Never Weaken Tests**: Existing tests must remain active and green.
+4. 🔑 **No Hardcoded Secrets**: Use environment variables for keys and credentials.
+5. 🎨 **Visual Consistency**: Preserve existing design language unless redesign is explicitly requested.
 
-| Rule | Detail |
-|------|--------|
-| Inspect before edit | Read the file before any write |
-| Minimal diff | Change only what the PRD requires |
-| No test weakening | Never delete, skip, or relax assertions |
-| No type suppression | No `@ts-ignore` without explanation |
-| No secret hardcoding | Env vars / repo's existing pattern |
-| No speculation | Build what the PRD says, nothing more |
-| Convention matching | Match lint, format, naming, import style |
-| State file gitignored | `.loop-engineering-state.json` → `.gitignore` |
+---
 
-## Maintenance
+## ⚖️ License & Upstream Maintenance
 
-> **Periodic manual check (no network required during normal runs):**
-> Re-check [UI/UX Pro Max](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill)
-> and [Ponytail](https://github.com/DietrichGebert/ponytail) for meaningful upstream
-> updates (new domains, revised rules, changed CLI flags). This is a human-triggered,
-> optional review — the skill runs fully offline.
+Released under the [MIT License](LICENSE).
 
-## License
-
-MIT
+> **Periodic Maintenance Note:** Periodically check [UI/UX Pro Max](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) and [Ponytail](https://github.com/DietrichGebert/ponytail) for upstream schema updates. Normal project execution runs completely offline without requiring network access.
